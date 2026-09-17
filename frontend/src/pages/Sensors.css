@@ -1,0 +1,233 @@
+.sensors-page {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.action-notification {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--status-success-bg);
+  border: 1px solid rgba(0, 255, 135, 0.3);
+  color: var(--status-success);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.devices-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.device-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--border-color);
+}
+
+.device-card.device-connected {
+  border-color: rgba(0, 242, 254, 0.3);
+}
+
+.device-card.device-disconnected {
+  opacity: 0.85;
+}
+
+.device-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.device-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.device-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.device-conn-text.connected {
+  color: var(--status-success);
+}
+
+.device-conn-text.disconnected {
+  color: var(--status-danger);
+}
+
+.device-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.device-id-code {
+  font-family: 'Outfit', monospace;
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.device-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.device-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dev-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.battery-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.battery-icon {
+  color: var(--status-success);
+}
+
+.battery-number {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+.last-sync-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.firmware-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.battery-bar-container {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.battery-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+.device-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spin-icon {
+  animation: spin 1s linear infinite;
+}
+
+/* IoT Pipeline */
+.iot-architecture-card {
+  margin-top: 8px;
+}
+
+.iot-pipeline-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 16px 0 8px;
+}
+
+.flow-step {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  min-width: 150px;
+  position: relative;
+}
+
+.flow-step.highlight-step {
+  border-color: rgba(0, 242, 254, 0.4);
+  background: rgba(0, 242, 254, 0.05);
+}
+
+.step-badge {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  color: #050608;
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.step-content h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.step-content p {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.step-content code {
+  font-size: 0.68rem;
+  color: var(--accent-cyan);
+}
+
+.flow-arrow {
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .devices-grid {
+    grid-template-columns: 1fr;
+  }
+}
