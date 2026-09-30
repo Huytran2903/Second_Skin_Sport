@@ -7,10 +7,10 @@ import {
   Cpu,
   FileText,
   Settings,
-  Zap,
   Radio,
   X,
 } from 'lucide-react';
+import logoImg from '../assets/logo-slogan.png';
 import './Sidebar.css';
 
 export default function Sidebar({ isOpen, onClose }) {
@@ -29,20 +29,10 @@ export default function Sidebar({ isOpen, onClose }) {
       <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
         {/* Brand Header */}
         <div className="sidebar-header">
-          <div className="logo-badge">
-            <Zap className="logo-icon" size={20} />
-          </div>
-          <div className="logo-text-wrap">
-            <span className="logo-title">SECOND</span>
-            <span className="logo-subtitle">SKIN SPORT</span>
-          </div>
+          <img src={logoImg} alt="Second Skin Sport Logo" className="sidebar-logo-img" />
           <button className="sidebar-close-btn" onClick={onClose}>
             <X size={20} />
           </button>
-        </div>
-
-        <div className="brand-slogan">
-          <span>Theo dõi chuyển động. Nâng tầm hiệu suất.</span>
         </div>
 
         {/* Navigation Menu */}
